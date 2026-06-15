@@ -16,11 +16,14 @@
     'moescale.store':          { name: 'MoeScale',          tagline: 'Outbound that scales' },
     'moescale.xyz':            { name: 'MoeScale',          tagline: 'Outbound that scales' },
     'moescale.space':          { name: 'MoeScale',          tagline: 'Outbound that scales' },
+    'moescale.online':         { name: 'MoeScale',          tagline: 'Outbound that scales' },
     'moescalesystem.shop':     { name: 'MoeScale System',   tagline: 'Outbound that scales' },
     'moescalesystem.online':   { name: 'MoeScale System',   tagline: 'Outbound that scales' },
     'moescalesystem.pro':      { name: 'MoeScale System',   tagline: 'Outbound that scales' },
     'moescalesystem.site':     { name: 'MoeScale System',   tagline: 'Outbound that scales' },
     'moescalesystem.xyz':      { name: 'MoeScale System',   tagline: 'Outbound that scales' },
+    'moescaleb2b.site':        { name: 'MoeScale B2B',      tagline: 'B2B pipeline on autopilot' },
+    'moescalegrowth.xyz':      { name: 'MoeScale Growth',   tagline: 'B2B pipeline on autopilot' },
     'aioutbound.shop':         { name: 'AI Outbound',       tagline: 'AI agents that book meetings' },
     'aioutboundb2b.shop':      { name: 'AI Outbound B2B',   tagline: 'AI agents that book meetings' },
     'aioutreach.shop':         { name: 'AI Outreach',       tagline: 'AI agents that book meetings' },
@@ -32,6 +35,9 @@
     'b2bgrowth.store':         { name: 'B2B Growth',        tagline: 'B2B pipeline on autopilot' },
     'b2baigrowth.site':        { name: 'B2B AI Growth',     tagline: 'B2B pipeline on autopilot' },
     'b2baigrowth.online':      { name: 'B2B AI Growth',     tagline: 'B2B pipeline on autopilot' },
+    'b2bprosperity.com':       { name: 'B2B Prosperity',    tagline: 'B2B pipeline on autopilot' },
+    'b2bprosperity.site':      { name: 'B2B Prosperity',    tagline: 'B2B pipeline on autopilot' },
+    'b2bscale.xyz':            { name: 'B2B Scale',         tagline: 'B2B pipeline on autopilot' },
     'outboundb2b.shop':        { name: 'Outbound B2B',      tagline: 'B2B pipeline on autopilot' },
     'affiliategrowth.shop':    { name: 'Affiliate Growth',  tagline: 'Affiliate revenue on tap' },
     'affiliatehighticket.shop':{ name: 'Affiliate High Ticket', tagline: 'Affiliate revenue on tap' },
@@ -42,17 +48,30 @@
     'salespartner.shop':       { name: 'Sales Partner',     tagline: 'Your 24/7 sales hire' },
     'salesreferral.shop':      { name: 'Sales Referral',    tagline: 'Your 24/7 sales hire' },
     'sponsorsales.shop':       { name: 'Sponsor Sales',     tagline: 'Your 24/7 sales hire' },
-    'unlawyered.io':           { name: 'Unlawyered',        tagline: 'Legal docs without the lawyer bill' }
+    'marketingreferral.shop':  { name: 'Marketing Referral',tagline: 'Your 24/7 marketing hire' },
+    'growthb2b.site':          { name: 'Growth B2B',        tagline: 'B2B pipeline on autopilot' },
+    'growthwithai.online':     { name: 'Growth With AI',    tagline: 'AI-powered growth' },
+    'growthwithai.site':       { name: 'Growth With AI',    tagline: 'AI-powered growth' },
+    'growthwithai.space':      { name: 'Growth With AI',    tagline: 'AI-powered growth' },
+    'growthwithai.store':      { name: 'Growth With AI',    tagline: 'AI-powered growth' },
+    'growthwithai.world':      { name: 'Growth With AI',    tagline: 'AI-powered growth' },
+    'unlawyered.io':           { name: 'Unlawyered',        tagline: 'Legal docs without the lawyer bill' },
+    'beautyzalo.com':          { name: 'Beauty Zalo',       tagline: 'Beauty, simplified' },
+    'brainbaba.org':           { name: 'BrainBaba',         tagline: 'Mind the gap' },
+    'draftshastra.org':        { name: 'DraftShastra',      tagline: 'Draft, perfected' },
+    'googlr.org':              { name: 'Googlr',            tagline: 'Search, smarter' }
   };
 
   // ---- helpers ----
   function stripWww(host) { return host.replace(/^www\./, ''); }
 
   function titleCase(s) {
-    return s.replace(/[-_]+/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim()
-            .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    // Simple title case: replace separators with spaces, capitalize first letter of each word.
+    s = s.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+    return s.split(' ').map(function (w) {
+      if (!w) return '';
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(' ');
   }
 
   function deriveFromHost(host) {
