@@ -13,6 +13,7 @@
   // key: hostname (no protocol, no www.). value: { name, tagline?, ctaLabel? }
   var BRAND_MAP = {
     'moescale.site':           { name: 'MoeScale',          tagline: 'Outbound that scales' },
+    'moe-scale.com':           { name: 'Moe Scale',         tagline: 'Outbound that scales' },
     'moescale.store':          { name: 'MoeScale',          tagline: 'Outbound that scales' },
     'moescale.xyz':            { name: 'MoeScale',          tagline: 'Outbound that scales' },
     'moescale.space':          { name: 'MoeScale',          tagline: 'Outbound that scales' },
